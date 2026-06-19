@@ -73,7 +73,7 @@
     cursor: pointer
 }
 
-.mg-scale-btn.active {
+.mg-scale-btn.active-scale {
     background: var(--mg-accent);
     color: #fff;
     border-color: var(--mg-accent)
