@@ -1,0 +1,30 @@
+{
+  "name": "Modern Gantt",
+  "version": "2.0.0",
+  "author": "Kashyap Makadia",
+  "description": "Dependency-free modern JavaScript Gantt chart plugin using Microsoft-style event sample data: Country, City, Event.",
+  "samplePattern": [
+    "Country",
+    "City",
+    "Event"
+  ],
+  "entry": "index.html",
+  "files": [
+    "index.html",
+    "README.md",
+    "manifest.json",
+    "features.md",
+    "src/modern-gantt.css",
+    "src/modern-gantt.js",
+    "src/sample-data-generator.js"
+  ],
+  "features": [
+    "data-driven timeline range",
+    "stickyHeader option",
+    "themes",
+    "timeline scroll slider",
+    "accordion grouping",
+    "tooltips and popups",
+    "Microsoft event sample data generator"
+  ]
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modern Gantt v2.0 - Microsoft Events</title>
+  <link rel="stylesheet" href="src/modern-gantt.css">
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; margin: 24px; background: #fff; }
+    h1 { margin: 0 0 16px; }
+    .demo-actions { display: flex; gap: 8px; margin: 12px 0; align-items: center; flex-wrap: wrap; }
+    .demo-actions button, .demo-actions select { padding: 6px 10px; }
+    #popup { display: none; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Modern Gantt v2.0 - Microsoft Events</h1>
+
+  <div class="demo-actions">
+    <label>Theme:
+      <select id="themePicker">
+        <option value="blue">Blue</option>
+        <option value="green" selected>Green</option>
+        <option value="emerald">Emerald</option>
+        <option value="purple">Purple</option>
+        <option value="graphite">Graphite</option>
+      </select>
+    </label>
+    <button id="reloadData">Regenerate sample data</button>
+    <button id="scrollCurrent">Scroll to current date</button>
+  </div>
+
+  <div id="gantt"></div>
+  <div id="popup"></div>
+
+  <script src="src/sample-data-generator.js"></script>
+  <script src="src/modern-gantt.js"></script>
+  <script>
+    function createData() {
+      return generateMicrosoftEventData({
+        countryCount: 6,
+        minCitiesPerCountry: 2,
+        maxCitiesPerCountry: 4,
+        minEventsPerCity: 3,
+        maxEventsPerCity: 7,
+        years: [2025, 2026, 2027]
+      });
+    }
+
+    const gantt = new ModernGantt('#gantt', {
+      title: 'Microsoft Events Calendar',
+      theme: 'green',
+      stickyHeader: true,
+      data: createData(),
+      scale: 'months',
+      groupBy: [
+        { field: 'Country', sort: 'ASC', defaultVisible: true },
+        { field: 'City', sort: 'ASC', defaultVisible: true },
+        { field: 'Event', sort: 'ASC' }
+      ],
+      fromField: 'startDate',
+      toField: 'endDate',
+      labelField: 'Event',
+      barText: item => item.EventName,
+      tooltipField: 'TooltipText',
+      popupTarget: '#popup',
+      popupTemplate: item => `<strong>${item.EventName}</strong><pre>${JSON.stringify(item, null, 2)}</pre>`,
+      extraColumns: [
+        { field: 'Format', title: 'Format', width: '90px' },
+        { field: 'Status', title: 'Status', width: '90px' }
+      ],
+      onItemClick: item => console.log('Clicked event:', item),
+      onRender: (instance, context) => console.log('Rendered:', context),
+      onError: (error, context) => console.error('ModernGantt error:', context, error)
+    });
+
+    document.getElementById('themePicker').addEventListener('change', e => gantt.setTheme(e.target.value));
+    document.getElementById('reloadData').addEventListener('click', () => gantt.setData(createData()));
+    document.getElementById('scrollCurrent').addEventListener('click', () => gantt.scrollToCurrent());
+  </script>
+</body>
+</html>
