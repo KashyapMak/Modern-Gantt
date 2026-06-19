@@ -7,6 +7,8 @@
 
 Modern Gantt is a dependency-free JavaScript Gantt component for rendering grouped timeline data from flat JSON.
 
+Demo : [https://kashyapmak.github.io/Modern-Gantt/] 
+
 ---
 
 ## Package Structure
