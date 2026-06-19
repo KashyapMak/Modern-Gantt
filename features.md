@@ -34,7 +34,10 @@
 - Loading state.
 - No-data state.
 - Optional pagination.
-- Public methods: setData, refresh, setLoading, setTheme, scrollToCurrent, scrollToCurrentYear, scrollToDate.
+- Accordion toolbar controls added.
+- Public methods: setData, refresh, setLoading, setTheme, scrollToCurrent, scrollToCurrentYear, scrollToDate, expandAll, collapseAll, expandLevel, collapseLevel.
+- Responsive timeline auto-fit with optional min/max widths.
+
 
 ## Version 2.0 Sample Context
 

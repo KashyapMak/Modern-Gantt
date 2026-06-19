@@ -1,8 +1,8 @@
 {
   "name": "Modern Gantt",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": "Kashyap Makadia",
-  "description": "Dependency-free modern JavaScript Gantt chart plugin using Microsoft-style event sample data: Country, City, Event.",
+  "description": "Modern Gantt Microsoft event sample with green theme, responsive timeline fit and accordion controls.",
   "samplePattern": [
     "Country",
     "City",
@@ -18,13 +18,9 @@
     "src/modern-gantt.js",
     "src/sample-data-generator.js"
   ],
-  "features": [
-    "data-driven timeline range",
-    "stickyHeader option",
-    "themes",
-    "timeline scroll slider",
-    "accordion grouping",
-    "tooltips and popups",
-    "Microsoft event sample data generator"
+  "changes": [
+    "Added optional timeline width auto-fit configuration",
+    "Added toolbar accordion expand/collapse controls",
+    "Added expandAll/collapseAll/expandLevel/collapseLevel methods"
   ]
 }
