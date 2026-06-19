@@ -6,11 +6,14 @@
 **Sample Context:** Microsoft-style event calendar  
 **Default Example Hierarchy:** Country → City → Event
 
+
 ---
 
 ## Overview
 
 Modern Gantt renders grouped timeline data from a flat JSON array. It supports days, weeks and months views, accordion grouping, sticky headers, a horizontal timeline slider, themes, tooltips, popups, public methods and event callbacks.
+
+**Demo** : [https://kashyapmak.github.io/Modern-Gantt]
 
 The default sample pattern is:
 
