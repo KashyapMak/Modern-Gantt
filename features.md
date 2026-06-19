@@ -1,6 +1,4 @@
-# Modern Gantt v2.0 - Internal Feature Notes
-
-This file is intended for internal/project reference and is not required for end-user plugin release notes.
+# Modern Gantt v2.0 
 
 ## Included Features
 
@@ -20,8 +18,7 @@ This file is intended for internal/project reference and is not required for end
 - Header band avoids overlay clone patch.
 - Right header synced with right timeline horizontal scroll.
 - Timeline scroll slider in toolbar.
-- Themes: blue, bp, emerald, purple, graphite.
-- BP-inspired colour theme.
+- Themes: blue, green, emerald, purple, graphite.
 - Month header colours.
 - Year header light/dark pattern.
 - Today marker.
